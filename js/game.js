@@ -1,7 +1,6 @@
 let game = {
   ctx: null,
   canvas: null,
-  
   sprites: {
     background: null,
     cell: null,
