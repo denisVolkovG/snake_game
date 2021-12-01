@@ -3,8 +3,11 @@ game.board = {
   size: 15,
   cells: [],
   create() {
+    this.createCells();
+  },
+  createCells() {
     for (let row = 0; row < this.size; row++) {
-      for(let col = 0; col < this.size; col++) {
+      for (let col = 0; col < this.size; col++) {
         this.cells.push(this.createCell(row, col));
       }
     }
