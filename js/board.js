@@ -23,7 +23,6 @@ game.board = {
       y: cellSize * row + offsetY,
 
     };
-    return cell;
   },
   render() {
     this.cells.forEach(cell => {
