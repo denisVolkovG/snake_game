@@ -15,7 +15,7 @@ game.board = {
   createCell(row, col) {
     let cellSize = this.game.sprites.cell.width + 1;
     let offsetX = (this.game.width - cellSize * this.size) / 2;
-    let offsetY = (this.game.hight - cellSize * this.size) / 2;
+    let offsetY = (this.game.height - cellSize * this.size) / 2;
     return {
       row: row,
       col: col,
