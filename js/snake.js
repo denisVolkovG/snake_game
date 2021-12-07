@@ -1,6 +1,7 @@
 game.snake = {
   game: game,
   cells: [],
+  moving: false,
   create() {
     let startCells = [
       {row: 7, col: 7},
@@ -11,27 +12,35 @@ game.snake = {
       this.cells.push(this.game.board.getCell(startCell.row, startCell.col));
     }
   },
-  
+
   render() {
     this.cells.forEach(cell => {
       this.game.ctx.drawImage(this.game.sprites.body, cell.x, cell.y)
     });
   },
 
+  start() {
+    this.moving = true;
+  },
+
   move() {
+    console.log("move()");
+    if (!this.moving) {
+      return;
+    }
     // получить следующую ячейку
     let cell = this.getNextCell();
     // если такая ячейка есть
-    this.cells.unshift(cell);
-    // this.cells[0] - голова змеи
+    if (cell) {
       // добавить новую ячейку в snake.cells
-      this.cells.pop();
+      this.cells.unshift(cell);
       // удалить последнюю ячейку из snake.cells
-
-
+      this.cells.pop();
+    }
   },
 
   getNextCell() {
+    // this.cells[0] - голова змеи
     let head = this.cells[0];
     let row = head.row - 1;
     let col = head.col;
