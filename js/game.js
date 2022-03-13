@@ -84,7 +84,7 @@ let game = {
 
     for (let key in this.sprites) {
       this.sprites[key] = new Image();
-      this.sprites[key].src = "../sprites/" + key + ".png";
+      this.sprites[key].src = "/sprites/" + key + ".png";
       this.sprites[key].addEventListener("load", onAssetLoad)
     }
   },
